@@ -1,0 +1,3 @@
+domain: "samples-domain"
+service: "cadence-frontend"
+host: "cadence.staging.svc.cluster.local:7933"
