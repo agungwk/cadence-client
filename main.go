@@ -36,7 +36,7 @@ func startWorkers(h *common.SampleHelper, applicationName string) {
 
 func startWorkflow(h *common.SampleHelper, workflow interface{}, applicationName string, params ...interface{}) {
 	workflowOptions := client.StartWorkflowOptions{
-		ID:                              "helloworld_" + uuid.New(),
+		ID:                              applicationName + uuid.New(),
 		TaskList:                        applicationName,
 		ExecutionStartToCloseTimeout:    time.Minute * 5,
 		DecisionTaskStartToCloseTimeout: time.Minute * 5,
