@@ -228,6 +228,14 @@
 
 [[projects]]
   branch = "master"
+  digest = "1:4f9d1d92d5020c9d89e886ae26dc23d7b45ceb5a1953902ee50bc500a402b6b7"
+  name = "github.com/samarabbas/cadence-samples"
+  packages = ["cmd/samples/common"]
+  pruneopts = "UT"
+  revision = "5dab89de4725538f0a106b85540d4346b04cc0e9"
+
+[[projects]]
+  branch = "master"
   digest = "1:03d938ce55b7f7754700749135669a1cfe65acca866d1cdb7dc3e7ff166e3e28"
   name = "github.com/samuel/go-thrift"
   packages = ["parser"]
@@ -568,16 +576,13 @@
   analyzer-version = 1
   input-imports = [
     "github.com/pborman/uuid",
+    "github.com/samarabbas/cadence-samples/cmd/samples/common",
     "github.com/uber-common/cadence-samples/cmd/samples/common",
-    "go.uber.org/cadence/.gen/go/cadence/workflowserviceclient",
     "go.uber.org/cadence/activity",
     "go.uber.org/cadence/client",
     "go.uber.org/cadence/worker",
     "go.uber.org/cadence/workflow",
-    "go.uber.org/yarpc",
-    "go.uber.org/yarpc/transport/tchannel",
     "go.uber.org/zap",
-    "go.uber.org/zap/zapcore",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1
