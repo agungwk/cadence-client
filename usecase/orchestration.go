@@ -74,11 +74,15 @@ func OrchestrationWorkflow(ctx workflow.Context, packageSerial, voucherSerial st
 	SimulateProcessDelay(ctx)
 	err = workflow.ExecuteActivity(ctx, CreatePayment, orderSerial).Get(ctx, nil)
 	if err != nil {
+		currentState = "ROLLBACK_ORDER"
 		logger.Error("Activity failed.", zap.Error(err))
+		SimulateProcessDelay(ctx)
 		err = workflow.ExecuteActivity(ctx, RollbackOrder, orderSerial).Get(ctx, nil)
 		if err != nil {
 			return err
 		}
+		currentState = "ORDER_DISCARDED"
+		return nil
 	}
 
 	currentState = "ORDER_CREATED"
