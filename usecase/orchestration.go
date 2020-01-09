@@ -107,7 +107,7 @@ func RandInt(min, max int) int {
 
 // SimulateProcessDelay simulate processing somthing
 func SimulateProcessDelay(ctx workflow.Context) error {
-	err := workflow.Sleep(ctx, time.Millisecond*time.Duration(RandInt(700, 2000)))
+	err := workflow.Sleep(ctx, time.Millisecond*time.Duration(RandInt(5000, 10000)))
 	return err
 }
 

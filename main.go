@@ -61,7 +61,7 @@ func main() {
 		//startWorkers(&h, ApplicationName)
 		switch workflow {
 		case "simple":
-			startWorkers(&h, ApplicationName)
+			startWorkers(&h, usecase.HelloWorldApplicationName)
 		case "orchestration":
 			startWorkers(&h, usecase.CreateOrderGroupApplicationName)
 		}
